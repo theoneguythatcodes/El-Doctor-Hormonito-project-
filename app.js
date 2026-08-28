@@ -804,17 +804,11 @@ async function generateAIStory() {
 
       }
 
-
-      const data =
-        await response.json();
-
-
-      const story =
-        String(
-          data.story ||
-          data.text ||
-          ""
-        ).trim();
+      
+      const data = await response.json();
+      console.log("RESPUESTA DE /api/story:", data);
+      
+      const story = String(data.story || data.text || '').trim();
 
 
       if (!story) {
