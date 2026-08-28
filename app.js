@@ -837,65 +837,59 @@ async function generateAIStory() {
        LOCAL FALLBACK
        ----------------------------------------------------- */
 
-    const stories = {
-
-      Insulina: [
-        "🍰 En la fiesta apareció un pastel gigante y la glucosa empezó a subir.",
-
-        "🔑 ¡Entonces llegó la Insulina con su llave mágica! Ayudó a las células a aprovechar la glucosa como energía.",
-
-        "⚖️ Cuando todo volvió a equilibrarse, el Dr. Hormonito gritó: «¡Misión cumplida, equipo!»"
-      ],
-
-
-      Adrenalina: [
-        "🎢 La montaña rusa arrancó y el cerebro detectó una situación emocionante.",
-
-        "⚡ ¡Adrenalina al rescate! Las glándulas suprarrenales liberaron esta hormona para preparar al cuerpo para reaccionar rápidamente.",
-
-        "🧘 Cuando terminó el paseo, la alarma bajó y el cuerpo volvió poco a poco a la calma."
-      ],
-
-
-      Melatonina: [
-        "🌙 Se hizo de noche y el reloj biológico avisó que era hora de descansar.",
-
-        "💤 La Melatonina apareció como una pequeña señal nocturna que ayuda a preparar el cuerpo para el sueño.",
-
-        "✨ Las luces bajaron, el laboratorio quedó tranquilo y el Dr. Hormonito dijo: «¡A recargar baterías!»"
-      ],
-
-
-      "Hormona del Crecimiento": [
-        "👟 Pasó un año y el cuerpo necesitaba seguir creciendo.",
-
-        "📏 La hormona del crecimiento, producida por la hipófisis, ayudó a coordinar procesos relacionados con el crecimiento.",
-
-        "🚀 ¡Nueva talla desbloqueada! El Dr. Hormonito anotó otra misión completada."
-      ]
-
-    };
-
-
-    const selected =
-      stories[hormone] ||
-      [
-        `🧪 En el laboratorio ocurrió algo inesperado: ${scenario}.`,
-
-        `📨 ${hormone} recibió su momento de entrar en acción y envió sus señales por el cuerpo.`,
-
-        "🎉 El equipo del Dr. Hormonito comprobó que cada hormona tiene una misión especial."
-      ];
-
-
-    await new Promise(
-      resolve =>
-        setTimeout(
-          resolve,
-          350
-        )
-    );
-
+   const stories = {
+     insulina: [
+       `🍰 En la fiesta apareció un pastel gigante y la glucosa empezó a subir.`,
+       `🧠 El cuerpo detectó el aumento de glucosa y el páncreas recibió la señal.`,
+       `🔑 ¡Entonces llegó la Insulina con su llave mágica! Ayudó a las células a aprovechar la glucosa como energía.`,
+       `⚖️ Cuando la glucosa volvió a un nivel adecuado, el cuerpo recuperó su equilibrio.`,
+       `🎉 ¡Misión cumplida, equipo!`
+     ],
+   
+     adrenalina: [
+       `🎢 La montaña rusa arrancó y el cuerpo detectó una situación emocionante.`,
+       `🧠 El cerebro envió una señal de emergencia a las glándulas suprarrenales.`,
+       `⚡ ¡Adrenalina al rescate! Esta hormona ayudó a preparar al cuerpo para reaccionar rápidamente.`,
+       `🏃 El corazón comenzó a trabajar más rápido y los músculos recibieron más energía.`,
+       `🧘 Cuando terminó la aventura, el cuerpo fue regresando poco a poco a la calma.`
+     ],
+   
+     melatonina: [
+       `🌙 Se hizo de noche y el reloj biológico avisó que era hora de descansar.`,
+       `🧠 El cerebro detectó que había poca luz y la glándula pineal recibió la señal.`,
+       `💤 La Melatonina apareció como una señal nocturna que ayuda a preparar el cuerpo para el sueño.`,
+       `🛏️ El cuerpo comenzó a relajarse y a prepararse para descansar.`,
+       `✨ ¡Laboratorio cerrado por hoy! ¡Hora de recargar baterías!`
+     ],
+   
+     timosina: [
+       `🦠 Unos microbios intentaron entrar al cuerpo.`,
+       `🧠 El sistema inmunitario puso en marcha su equipo de defensa.`,
+       `🛡️ La Timosina ayudó en los procesos relacionados con la maduración de los linfocitos T.`,
+       `🔬 Los defensores aprendieron a reconocer mejor a los invasores.`,
+       `🎉 ¡El equipo de defensa completó su entrenamiento!`
+     ],
+   
+     hormona_crecimiento: [
+       `👟 Pasó el tiempo y el cuerpo necesitaba seguir creciendo.`,
+       `🧠 La hipófisis recibió las señales necesarias para coordinar procesos relacionados con el crecimiento.`,
+       `📏 La Hormona del Crecimiento entró en acción.`,
+       `🚀 Los tejidos recibieron señales que participan en el crecimiento y desarrollo.`,
+       `🎉 ¡Nueva etapa de crecimiento desbloqueada!`
+     ]
+   };
+   
+   const normalizedHormone = String(hormone)
+     .toLowerCase()
+     .normalize('NFD')
+     .replace(/[\u0300-\u036f]/g, '')
+     .replace(/\s+/g, '_');
+   
+   const selected = stories[normalizedHormone] || [
+     `🧪 En el laboratorio ocurrió algo inesperado: ${scenario}.`,
+     `📨 ${hormone} recibió su momento de entrar en acción y envió sus señales por el cuerpo.`,
+     `🎉 El equipo del Dr. Hormonito comprobó que cada hormona tiene una misión especial.`
+   ];
 
     renderStory(
       hormone,
