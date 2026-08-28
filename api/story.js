@@ -81,12 +81,12 @@ ${hormone}
       "https://openrouter.ai/api/v1/chat/completions",
       {
         method: "POST",
-        headers: {
+       headers: {
           "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
           "HTTP-Referer": "https://theoneguythatcodes.github.io/El-Doctor-Hormonito-project-/",
-          "X-Title": "¡El Gran Viaje de las Hormonas con el Dr. Hormonito! 🔬✨"
-        },
+          "X-Title": "El Doctor Hormonito"
+       },
         body: JSON.stringify({
           model: "openrouter/free",
           messages: [
