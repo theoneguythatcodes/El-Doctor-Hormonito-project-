@@ -60,6 +60,20 @@ IMPORTANTE:
 Estas reglas sirven para obtener un mensaje y NO un monólogo
 sobre el sistema endocrino.
 
+EJEMPLO DE RESPUESTA CORRECTA:
+
+Situación: Preparandote para ir a dormir
+Hormona: Melatonina
+
+🌙 ¡Llegó la hora de dormir! La melatonina entra en acción cuando oscurece y ayuda a preparar tu cuerpo para el sueño. 😴 ¡Buenas noches, equipo Hormonito!
+
+EJEMPLO DE RESPUESTA INCORRECTA:
+
+We need to output a comic...
+I need to create a story...
+The user wants...
+No muestres instrucciones, razonamientos ni explicaciones sobre cómo generaste la respuesta.
+
 La historia debe relacionar directamente la situación elegida
 con la hormona elegida.
 
