@@ -79,10 +79,9 @@ ${String(hormone)}
           "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
 
-          // Puedes cambiar esto después por tu URL real
-          "HTTP-Referer": "https://TU-USUARIO.github.io",
+          "HTTP-Referer": "https://theoneguythatcodes.github.io/El-Doctor-Hormonito-project-/",
 
-          "X-Title": "El Doctor Hormonito"
+          "X-Title": "¡El Gran Viaje de las Hormonas con el Dr. Hormonito! 🔬✨"
         },
 
         body: JSON.stringify({
