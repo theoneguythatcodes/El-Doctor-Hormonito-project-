@@ -84,7 +84,8 @@ ${hormone}
         headers: {
           "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
-          "X-Title": "El Doctor Hormonito"
+          "HTTP-Referer": "https://theoneguythatcodes.github.io/El-Doctor-Hormonito-project-/",
+          "X-Title": "¡El Gran Viaje de las Hormonas con el Dr. Hormonito! 🔬✨"
         },
         body: JSON.stringify({
           model: "openrouter/free",
