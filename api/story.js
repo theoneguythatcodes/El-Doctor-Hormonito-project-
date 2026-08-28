@@ -130,15 +130,28 @@ ${hormone}
       });
     }
 
-    const story = data?.choices?.[0]?.message?.content?.trim();
+    const message = data?.choices?.[0]?.message;
 
-    if (!story) {
-      console.error("Respuesta sin contenido:", data);
+console.log("OpenRouter data:", JSON.stringify(data, null, 2));
+console.log("Message:", message);
 
-      return res.status(502).json({
-        error: "La IA devolvió una respuesta vacía."
-      });
+const story =
+  typeof message?.content === "string"
+    ? message.content.trim()
+    : "";
+
+if (!story) {
+  console.error("Respuesta sin contenido:", JSON.stringify(data, null, 2));
+
+  return res.status(502).json({
+    error: "La IA devolvió una respuesta vacía.",
+    debug: {
+      hasChoices: Array.isArray(data?.choices),
+      choicesLength: data?.choices?.length ?? 0,
+      messageKeys: message ? Object.keys(message) : []
     }
+  });
+}
 
     console.log("Historieta generada correctamente.");
 
