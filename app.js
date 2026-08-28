@@ -698,13 +698,6 @@ async function generateAIStory() {
   console.log("🔥 generateAIStory() SE EJECUTÓ");
 
   const scenario = document.getElementById('aiScenarioSelect')?.value || '';
-   
-  const scenario =
-    document
-      .getElementById(
-        "aiScenarioSelect"
-      )
-      ?.value || "";
 
 
   const hormone =
