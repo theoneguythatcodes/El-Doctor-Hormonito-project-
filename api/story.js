@@ -93,6 +93,10 @@ ${hormone}
             {
               role: "system",
               content: systemPrompt
+            },
+            {
+              role: "user",
+              content: `Crea ahora la historieta usando esta situación: "${scenario}" y esta hormona: "${hormone}". Devuelve únicamente la historieta final. No expliques tus instrucciones ni tu razonamiento.`
             }
           ],
           temperature: 0.8,
